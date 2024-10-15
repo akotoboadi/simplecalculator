@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coin flip Game</title>
+    </head>
+    <body>
+        <script>
+            let randomNumber = Math.random();
+            let result = '';
+            if (randomNumber < 0.5){
+                result = 'heads';
+            }else{
+                result = 'tails';
+            }
+            let guess = 'heads' || 'tails';
+            if (guess == result){
+                console.log("You win!");
+            }else{
+                console.log('You lose!');
+            }
+            console.log(`Your guess is ${guess} and the result is ${result} so ..`)
+            const display = (guess == result)?"You win":"You lose";
+            console.log(display);
+        </script>
+    </body>
+</html>
