@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Exercise on Ifs</title>
+    </head>
+    <body>
+        <script>
+            let hour = 4;
+            let name ='Akoto';
+            if (hour>=6 && hour<=12){
+                console.log(`Good morning! ${name}`);
+            }else if (hour>= 13 && hour<=17){
+                console.log(`Good afternoon! ${name}`);
+            }
+            else{
+                console.log(`Good night! ${name}`);
+            }
+            let age = 67;
+            const isHoliday = false;
+            if ((age<=6 || age>=65) && !isHoliday){
+                console.log('Discount');
+            }else{
+                console.log('No Discount');
+            }
+        </script>
+    </body>
+</html>
