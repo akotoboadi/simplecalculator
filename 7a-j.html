@@ -48,6 +48,40 @@
             console.log(convertToCelcius(86));
             console.log(convertToFahrenheit(25));
 
+            function convertLength(length,from,to){
+                let result = '';
+                if (from === 'miles' && to ==='km'){
+                    let convertedLength = (length * 1.6);
+                    result = (`${length} ${from} = ${convertedLength} ${to}`);
+                }else if (from === 'km' && to ==='miles'){
+                    let convertedLength = (length * 0.625);
+                    result = (`${length} ${from} = ${convertedLength} ${to}`);
+
+                }else if (from === 'km' && to ==='km'){
+                    let convertedLength = length;
+                    result = (`${length} ${from} = ${convertedLength} ${to}`);
+
+                }else if (from === 'miles' && to ==='miles'){
+                    let convertedLength = length;
+                    result = (`${length} ${from} = ${convertedLength} ${to}`);
+
+                }else if((from !== 'miles') || (from !=='km') ){
+                    result = (`Invalid unit: (${from} )`);
+                }else if((to !== 'miles') || (to !=='km')){
+                    result = (`Invalid unit: (${to} )`);
+
+                }
+                return result;
+
+            }
+            console.log(convertLength(50,'miles','km'));
+            console.log(convertLength(32,'km','miles'));
+            console.log(convertLength(50,'km','km'));
+            console.log(convertLength(5,'Ibs','km'));
+            console.log(convertLength(5,'Ibs','Ibs'));
+            console.log(convertLength(5,'miles','Ibs'));
+
+
             
         </script>
     </body>
