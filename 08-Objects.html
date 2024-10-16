@@ -5,6 +5,7 @@
     </head>
     <body>
         <script>
+            /*
             const product ={
                 name:'socks',
                 price:1090
@@ -19,6 +20,48 @@
             console.log(product);
             delete product.newProperty;
             console.log(product);
+            */
+           const product2 = {
+            name:'shirt',
+            'delivery-time':'1 day',
+            rating :{
+                stars:4.5,
+                count:87
+                // nested objects
+
+            },
+            func: function function1(){
+                console.log('function inside object');
+
+            }
+
+           };
+           console.log(product2);
+           console.log(product2.name);
+           console.log(product2['name']);
+           // There is a difference btwn dot notation on ln 29 and bracket notation on ln 30 . 
+           // The dot notation will see the code in ln 33   as(delivery - time instead of a single key)
+           // console.log(product2.delivery-time);
+           // But the bracket notation helps to prevent this by making it known as one key.
+           console.log(product2['delivery-time']);
+           console.log(product2.rating.stars);
+           product2.func();
+           console.log(typeof console.log)
+           // built in objects
+           /*
+           JSON
+           Local storage
+
+           */
+
+           console.log(JSON.stringify(product2));
+           const jsonString =JSON.stringify(product2);
+           console.log(JSON.parse(jsonString));
+           // JSON.parse converts from JSON to java script object
+
+           // HOW TO USE LOCAL STORAGE
+           
+
 
 
 
