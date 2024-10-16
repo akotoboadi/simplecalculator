@@ -63,7 +63,7 @@
                                 cartQuantity+=num;
                     if (cartQuantity < 0){
                         alert(`Not enough items in cart`);
-                        cartQuantity += 1;
+                        cartQuantity += Math.abs(num);
 
                     }else if (cartQuantity >=0){
                         console.log(`cart quantity: ${cartQuantity}`);
