@@ -16,6 +16,39 @@
             greet();
             greet('Akoto');
             greet('Simon');
+            function convertToFahrenheit(celcius){
+                let fahrenheit = (celcius * 9/5) + 32;
+                return fahrenheit;
+            }
+            console.log(convertToFahrenheit(25));
+
+            function convertToCelcius(fahrenheit){
+                let celcius = ( fahrenheit - 32) *5/9;
+                return celcius;
+            }
+            console.log(convertToCelcius(86));
+
+            function convertTemperature(degrees,unit){
+                let result = '';
+                if (unit ==='C'){
+                    let celsiusToFahrenheitResult = (degrees * 9/5) + 32;
+                     result = (`${celsiusToFahrenheitResult}F`);
+                }else if (unit === 'F'){
+                    let fahrenheitToCelsiusResult = ( degrees - 32) *5/9;
+                     result = (`${fahrenheitToCelsiusResult}C`);
+
+                }else {
+                     result =(`You did not enter the right unit`);
+                }
+                return result;
+
+            }
+            console.log(convertTemperature(25,'C'));
+            console.log(convertTemperature(86,'F'));
+            console.log(convertToCelcius(86));
+            console.log(convertToFahrenheit(25));
+
+            
         </script>
     </body>
 </html>
