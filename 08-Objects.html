@@ -21,6 +21,10 @@
             delete product.newProperty;
             console.log(product);
             */
+
+
+
+            /*
            const product2 = {
             name:'shirt',
             'delivery-time':'1 day',
@@ -47,20 +51,76 @@
            console.log(product2.rating.stars);
            product2.func();
            console.log(typeof console.log)
-           // built in objects
-           /*
-           JSON
-           Local storage
-
-           */
+           
 
            console.log(JSON.stringify(product2));
            const jsonString =JSON.stringify(product2);
            console.log(JSON.parse(jsonString));
+           */
+
+           
            // JSON.parse converts from JSON to java script object
 
            // HOW TO USE LOCAL STORAGE
+           // refer to 08-rock paper scissors ln 110 -112 for explanation and trace codes in the file for understanding
+
+           /* built in objects
            
+           JSON
+           Local storage
+
+           */
+          console.log('hello'.length);
+          console.log('hello'.toUpperCase());
+          console.log('HELLO'.toLowerCase());
+
+          const object1 ={
+            message:'hello'
+          };
+          const object2 =object1;
+          object1.message = 'Good job!';
+          console.log(object1);
+          console.log(object2);
+          object2.message = 'Good luck!';
+          console.log(object2);
+
+          const object3 ={
+            message : 'Good job!'
+          };
+          console.log(object3 === object1);
+          console.log(object2 ===object1);
+          // The above codes in lines 90 - 91 compare the references and not the values inside.
+
+          const object4 ={
+            message : 'Good job!',
+            price: 799
+          };
+
+          /* shortcuts in objects
+          1.destructing
+          2.Shorthands property
+          */
+
+          // const message = object4.message; this is common but you can use a shortcut called destructing when the variable to be created is named the same as the family of the object which is to be assigned to the new variable
+          // The code on line 106 is called  destructing , where the message family in the object4 is assigned to a variable named message . NB: we can use it to assign all values in the object to the new variable as shown in the line below where two variables thus message and price.
+          const {message,price} = object4;
+          console.log(message);
+          console.log(price);
+          
+          const object5 ={
+            // message:message
+            message,
+            /*method: function function1(){
+              console.log('method');
+            }
+              */  //this block of comment is same as ln118 to 120 .(Shorthand method)
+
+            method(){
+              console.log('method');
+            }
+          };
+          console.log(object5);
+          object5.method();
 
 
 

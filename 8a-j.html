@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lesson 8 exercises on objects</title>
+    </head>
+    <body>
+        <script>
+            // const product ={
+            //     name : 'basketball',
+            //     price: (2095 * 0.01)
+            // };
+            // console.log(product);
+            // product.price += (500*0.01);
+            // console.log(product.price); 
+            // console.log(product);
+            // product['delivery-time'] = '3 days';
+            // console.log(product);
+
+            const product1 ={
+                name:'Basketball',
+                price:25
+            };
+            const product2 ={
+                name:'Football',
+                price:30
+            };
+            function comparePrice(product1,product2){
+                let result = '';
+                if (product1.price > product2.price){
+                    result = product1.name;
+                }  else if(product2.price > product1.price){
+                    result = product2.name;
+                }
+                return result;
+
+            }
+            function isSameProduct(product1,product2){
+                let result = false;
+                if (product1.name === product2.name && product1.price === product2.price){
+                    result = true;
+                } else {
+                    result = false;
+                }
+                return result;
+            }
+             console.log(comparePrice(product1,product2));
+
+             product1.name = 'bike';
+             product1.price = 250;
+             product2.name = 'Car';
+             product2.price = 250;
+
+             console.log(isSameProduct(product1,product2));
+
+             let greet = 'Good morning';
+             console.log(greet.toLowerCase());
+             let test = 'test';
+             console.log(test.repeat(2));
+
+        </script>
+    </body>
+</html>
