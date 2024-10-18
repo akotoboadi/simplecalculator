@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Coin flip Game</title>
+    </head>
+    <body>
+        <p>
+            <button onclick="
+                 
+                playGame('heads');
+                ">
+                heads
+            </button>
+            <button onclick="
+            
+            playGame('tails');
+            ">
+                tails
+            </button>
+            <button onclick="
+        gameScore.Wins = 0;
+        gameScore.losses = 0;
+        localStorage.removeItem('score');
+        
+        ">Reset Score</button>
+        </p>
+        <script>
+            // const gameScore ={
+            //     Wins:0,
+            //     losses:0
+
+            // };
+            
+            let gameScore = JSON.parse(localStorage.getItem('score'));
+            
+            let result = '';
+            
+            function playGame(guess){
+                const result = pickComputerMove();
+
+                if (guess == result){
+                display = 'You Win';
+            }else{
+                display = 'You lose';
+            }
+
+
+            if (guess == result){
+                gameScore.Wins += 1;
+            } else {
+                gameScore.losses += 1;
+            }
+            console.log(gameScore);
+            localStorage.setItem('score',JSON.stringify(gameScore));
+            alert(`Your guess is ${guess} and the result is ${result} so ${display}`);
+
+            }
+
+            function pickComputerMove(){
+                const randomNumber = Math.random();
+                if (randomNumber >=0 && randomNumber < 1/2){
+                result = 'heads';
+            }else if (randomNumber >= 1/2  && randomNumber < 1 ){
+                result = 'tails';
+            }
+            console.log(result);
+            console.log(randomNumber);
+            return result;
+
+            }
+            
+            // let guess =  '';
+            let display = '';
+            
+            
+            
+            
+
+            // const display = (guess == result)?"You win":"You lose";
+            // console.log(display);
+            
+            
+        </script>
+    </body>
+</html>
