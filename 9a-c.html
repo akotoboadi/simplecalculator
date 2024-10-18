@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Lesson9 Exercises on DOM</title>
+    </head>
+    <body>
+        <button>9a</button>
+        <button class="js-9b">9a</button>
+
+        <p>
+            <button class="js-heads-button" onclick="
+            playGame('heads');
+            
+            ">heads</button>
+            <button class="js-tails-button" onclick="
+            playGame('tails');
+            ">
+                tails
+
+            </button>
+        </p>
+        <p class="js-display" ></p>
+
+        <input class="js-input" placeholder="Name" onkeydown="
+        handleNameKeydown (event);
+        
+        ">
+        <!-- <button onclick="
+        getName();
+        ">Submit</button> -->
+        
+        <input type="submit" onclick="
+        getName();
+        ">
+        <p class="js-result"></p>
+
+        <script>
+            console.log(document.querySelector('button'));
+            document.querySelector('.js-9b').innerHTML = '9b done';
+            
+            function playGame(choice){
+                let result = ''
+                
+
+                if (choice == 'heads'){
+                    result = 'You chose: heads';
+
+                }else if (choice == 'tails'){
+                    result = 'You chose: tails';
+
+                }
+                document.querySelector('.js-display').innerHTML = result;
+            }
+
+            function getName(){
+                const inputElement = document.querySelector('.js-input');
+                let text = inputElement.value;
+                document.querySelector('.js-result').innerHTML = `Your name is: ${text}`;
+
+            }
+            function handleNameKeydown (event){
+                 if ( event.key === 'Enter'){
+                     getName();
+
+                }
+
+            }
+
+            
+
+        </script>
+    </body>
+</html>

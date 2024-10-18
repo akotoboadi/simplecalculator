@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>challenge eercises for dom</title>
+    </head>
+    <body>
+        <p> Youtube Subscribe Button</p>
+        <button class="js-sub-button" 
+        onclick=" subscribe();">Subscribe</button>
+
+        <p>Rock Paper Scissors</p>
+        <a href="09-rock-paper-scissors.html" target="_blank">Click here</a>
+        <br>
+        <br>
+        <p>Amazon Shipping Calculator</p>
+        <input class="js-cost-input" placeholder="Cost of order" onkeydown="
+        handleCostKeydown(event);
+        
+        ">
+        <button onclick="
+        calculateTotal();
+        ">Calculate
+        </button>
+        <p class="js-total-cost"></p>
+        <p>Orders under $40 = +$10 shipping.</p>
+        <p>Orders over $40 = FREE shipping.</p>
+
+        
+
+
+
+
+        
+        <script>
+
+            function handleCostKeydown(event){
+                if (event.key === 'Enter') {
+                calculateTotal();
+                }
+
+            }
+
+            function calculateTotal(){
+                const inputElement  = document.querySelector('.js-cost-input');
+                let cost = Number(inputElement.value);
+                
+                 
+                if (cost < 40){
+                    cost =  Math.round((cost + 10)* 100 )/100;
+                }else if (cost > 40){
+                    cost = Math.round(cost * 100)/100;
+                }
+                document.querySelector('.js-total-cost').innerHTML = `$${cost}` ;
+
+            }
+            function subscribe(){
+                const buttonElement = document.querySelector('.js-sub-button');
+                if (buttonElement.innerText === 'Subscribe'){
+                    buttonElement.innerHTML = 'Subscribed';
+                }else {
+                    buttonElement.innerHTML = 'Subscribe';
+                }
+
+            }
+            
+        </script>
+    </body>
+</html>
